@@ -1,0 +1,2 @@
+# gentoo
+Tips for gentoo.
