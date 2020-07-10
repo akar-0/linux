@@ -22,7 +22,7 @@ In /etc/portage/make.conf, replace *-march=native* (if it is set) of COMMON_FLAG
 
 >gcc -v -E -x c -march=native -mtune=native - < /dev/null 2>&1 | grep cc1 | perl -pe 's/ -mno-\S+//g; s/^.* - //g;'
 
-Edit /etc/exports as follows, replacing wiht the client's IP:
+Add the following line to /etc/exports, replacing wiht the client's IP:
 
 >vim  /etc/exports
 
