@@ -30,9 +30,9 @@ Edit /etc/exports as follows, replacing wiht the client's IP:
 
 Then run:
 
->exportfs -rv
-
 >/etc/init.d/nfs start
+
+>exportfs -rv
 
 
 ### On the client:
