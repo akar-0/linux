@@ -1,11 +1,11 @@
-# chroot (with client) on another computer (server) using nfs
+# chroot on distant computer using nfs
 *(See bsdvodsky's post on [this forums.gentoo.org thread](https://forums.gentoo.org/viewtopic-p-2408037.html))*
 
-* Useful when the server is very slow on comparison to the client (the server's CPU is totally passive).
+* Useful to get faster building operations in cases where the NFS server's CPU (the server) is very slow on comparison to the client (the server's CPU is totally passive).
 * For compiling tasks, it's easy to configure, more direct and apparently , at least in some configurations, more efficient than distcc.
 * Requires both computers have the same architecture and the same gcc version (among possible other restrictions)
 * May fail on some packages (in my case failed with dev-python/PyQtWebEngine , but could be because of a remaining unsuccessful  distcc config not properly stopped...), possible permission problems (?)...
-* Proved with X96_64 arch's Intel i5-9400 CPU's client and several old dual-cores as servers; gcc version 9.3.0.
+* Proved with X96_64 arch's Intel i5-9400 CPU's client, several old dual-cores and an i3 4 x 3,06 GHz as servers; gcc version 9.3.0.
 
 ## How to do it
 
