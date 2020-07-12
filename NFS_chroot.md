@@ -11,7 +11,7 @@
 
 All following commands must be executed as the root user.
 
-If needed, emerge nfs-utils on both computers:
+You'll need nfs-utils package on both computers. To emerge it:
 
 ```sh
 emerge -a nfs-utils
