@@ -50,6 +50,7 @@ Run the following (replace with the server's IP on line 2):
 ```sh
 rc-service nfsclient start
 mount -t nfs 192.168.x.x:/ /mnt/gentoo/ -o auto,rw,hard,intr,nolock
+cd /mnt/gentoo
 mount -t proc none /mnt/gentoo/proc
 chroot /mnt/gentoo /bin/bash
 env-update && source /etc/profile
@@ -70,6 +71,7 @@ On the client, first run:
 
 ```sh
 exit
+cd
 ```
 
 (or Ctrl d)
@@ -80,3 +82,6 @@ Then
 ```sh
 umount -R /mnt/gentoo
 ```
+
+##
+* See also: [*Chroot* on Archlinux Wiki](https://wiki.archlinux.org/index.php/Chroot)
