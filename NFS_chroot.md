@@ -31,8 +31,7 @@ Add the following line to /etc/exports, replacing wiht the client's IP:
 
 
 ```sh
-vim  /etc/exports
-/       192.168.x.x(sync,rw,no_root_squash)
+echo "/       192.168.x.x(sync,rw,no_root_squash)" >> /etc/exports
 ```
 
 Then run:
@@ -73,8 +72,6 @@ On the client, first run:
 exit
 cd
 ```
-
-(or Ctrl d)
 
 Then
 
