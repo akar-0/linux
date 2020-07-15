@@ -19,15 +19,17 @@ emerge -a nfs-utils
 
 ### On the server:
 
-In ```make.conf```, replace ```-march=native``` (if it is set) of COMMON_FLAGS field with the result of the following command:
+Edit ```make.conf```, and replace ```-march=native``` (if it is set) of COMMON_FLAGS field with the result of the second following command:
 
 ```sh
-vim /etc/portage/make.conf
+$EDITOR /etc/portage/make.conf
+```
 
+```sh
 gcc -v -E -x c -march=native -mtune=native - < /dev/null 2>&1 | grep cc1 | perl -pe 's/ -mno-\S+//g; s/^.* - //g;'
 ```
 
-Add the following line to /etc/exports, replacing wiht the client's IP:
+Complete /etc/exports in order to make your root partition available on NFS (replacing with the client's IP):
 
 
 ```sh
@@ -80,5 +82,5 @@ Then
 umount -R /mnt/gentoo
 ```
 
-##
-* See also: [*Chroot* on Archlinux Wiki](https://wiki.archlinux.org/index.php/Chroot)
+## See also:
+* [*Chroot* on Archlinux Wiki](https://wiki.archlinux.org/index.php/Chroot)
