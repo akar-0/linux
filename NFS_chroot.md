@@ -29,14 +29,14 @@ $EDITOR /etc/portage/make.conf
 gcc -v -E -x c -march=native -mtune=native - < /dev/null 2>&1 | grep cc1 | perl -pe 's/ -mno-\S+//g; s/^.* - //g;'
 ```
 
-Complete /etc/exports in order to make your root partition available on NFS (replacing with the client's IP):
+Complete /etc/exports in order to set your NFS share (replacing with the client's IP):
 
 
 ```sh
 echo "/       192.168.x.x(sync,rw,no_root_squash)" >> /etc/exports
 ```
 
-Then run:
+Then run the following to start the NFS server and make your root partition accessible to the client:
 
 ```sh
 /etc/init.d/nfs start
