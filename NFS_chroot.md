@@ -1,15 +1,16 @@
 # chroot on distant computer using nfs
-*(See bsdvodsky's post on [this forums.gentoo.org thread](https://forums.gentoo.org/viewtopic-p-2408037.html))*
+
+## Features and limitations
 
 * Useful to get faster building operations in cases where the NFS server's CPU (the server) is very slow on comparison to the client (the server's CPU is totally passive).
-* For compiling tasks, it's easy to configure, more direct and apparently , at least in some configurations, more efficient than distcc.
-* Requires both computers have the same architecture and the same gcc version (among possible other restrictions)
-* May fail on some packages (in my case failed with dev-python/PyQtWebEngine , but could be because of a remaining unsuccessful  distcc config not properly stopped...), possible permission problems (?)...
-* Proved with X96_64 arch's Intel i5-9400 CPU's client, several old dual-cores and an i3 4 x 3,06 GHz as servers; gcc version 9.3.0.
+* For compiling tasks, it's easy to configure, more direct and apparently, at least in some configurations, more efficient than distcc.
+* Requires both computers have the same architecture and the same gcc version (among possible other restrictions).
+* Points to make clear: may fail on some packages, possible permission problems (?)...
+* Proved with X96_64 arch's Intel i5-9400 CPU's client, several old dual-cores and an i3 4 x 3,06 GHz as servers; gcc version 9.3.0 / 9.3.0-r1.
 
 ## How to do it
 
-All following commands must be executed as the root user.
+**All following commands must be executed as the root user.**
 
 You'll need nfs-utils package on both computers. To emerge it:
 
@@ -19,18 +20,13 @@ emerge -a nfs-utils
 
 ### On the server:
 
-Edit ```make.conf```, and replace ```-march=native``` (if it is set) of COMMON_FLAGS field with the result of the second following command:
+#### Set on correct CFLAGS
 
-```sh
-$EDITOR /etc/portage/make.conf
-```
+In ```/etc/portage/make.conf```, one should not use the automated ```-march=native``` setting in COMMON_FLAGS / CFLAGS / CXXFLAGS fields, but rather an explicit set of flags. To do so you can replace ```-march=native``` with the output of ```resolve-march-native``` (first emerge the *app-misc/resolve-march-native* package if you don't have it).
 
-```sh
-gcc -v -E -x c -march=native -mtune=native - < /dev/null 2>&1 | grep cc1 | perl -pe 's/ -mno-\S+//g; s/^.* - //g;'
-```
+#### Set and start the NFS server
 
 Complete /etc/exports in order to set your NFS share (replacing with the client's IP):
-
 
 ```sh
 echo "/       192.168.x.x(sync,rw,no_root_squash)" >> /etc/exports
@@ -45,8 +41,7 @@ exportfs -rv
 
 ### On the client:
 
-Run the following (replace with the server's IP on line 2):
-
+To choot on the server,run the following commands in order (replace with the server's IP on line 2):
 
 ```sh
 rc-service nfsclient start
@@ -84,3 +79,4 @@ umount -R /mnt/gentoo
 
 ## See also:
 * [*Chroot* on Archlinux Wiki](https://wiki.archlinux.org/index.php/Chroot)
+* *This tutorial is inspired by bsdvodsky's post on [this forums.gentoo.org thread](https://forums.gentoo.org/viewtopic-p-2408037.html)*
