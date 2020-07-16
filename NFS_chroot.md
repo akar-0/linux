@@ -35,7 +35,7 @@ echo "/       192.168.x.x(sync,rw,no_root_squash)" >> /etc/exports
 Then run the following to start the NFS server and make your root partition accessible to the client:
 
 ```sh
-/etc/init.d/nfs start
+rc-service nfs start
 exportfs -rv
 ```
 
