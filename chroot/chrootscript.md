@@ -1,3 +1,4 @@
+```bash
 #!/bin/bash
 #Variables integration
 read -p 'Enter mountpoint: /mnt/...'  mountPoint
@@ -18,3 +19,4 @@ chroot /mnt/chroot /bin/bash
 source /etc/profile 
 export PS1="(chroot) ${PS1}"
 echo "chroot is ok"
+```
