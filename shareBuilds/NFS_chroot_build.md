@@ -1,4 +1,4 @@
-# chroot over nfs
+# chroot over nfs to build packages on distant computer
 
 ## Features and limitations
 
