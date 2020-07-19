@@ -1,12 +1,15 @@
-# chroot on distant computer using nfs
+# chroot over nfs
 
 ## Features and limitations
 
 * Useful to get faster building operations in cases where the NFS server's CPU (the server) is very slow on comparison to the client (the server's CPU is totally passive).
 * For compiling tasks, it's easy to configure, more direct and apparently, at least in some configurations, more efficient than distcc.
 * Requires both computers have the same architecture and the same gcc version (among possible other restrictions).
-* Points to make clear: may fail on some packages, possible permission problems (?)...
 * Proved with X96_64 arch's Intel i5-9400 CPU's client, several old dual-cores and an i3 4 x 3,06 GHz as servers; gcc version 9.3.0 / 9.3.0-r1.
+* Some builds fail, especially large ones (eg. Firefox).
+* Some steps last extremely long, like unpacking/checking sources and cleaning portage temporary files (even if Portage's TMPDIR is mounted on ram).
+
+For the above mentionned reasons, chroot over NFS may be a temporary solution but one might prefer to use the powerful host to build binaries.
 
 ## How to do it
 
