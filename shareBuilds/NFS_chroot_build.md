@@ -23,7 +23,7 @@ emerge -a nfs-utils
 
 ### On the server:
 
-#### Set on correct CFLAGS
+#### Set up correct CFLAGS
 
 In ```/etc/portage/make.conf```, one should not use the automated ```-march=native``` setting in COMMON_FLAGS / CFLAGS / CXXFLAGS fields, but rather an explicit set of flags. To do so you can replace ```-march=native``` with the output of ```resolve-march-native``` (first emerge the *app-misc/resolve-march-native* package if you don't have it).
 
