@@ -99,3 +99,6 @@ emerge -ak atom
 ```
 
 ( ```-ak``` is equivalent to the more explicit  ```--usepkg --ask``` options).
+
+# See also
+* [*Binary package guide* on Gentoo's wiki](https://wiki.gentoo.org/wiki/Binary_package_guide)
