@@ -17,8 +17,8 @@ You'll need nfs-utils package on both computers. To emerge it:
 emerge -a nfs-utils
 ```
 
-### Preparatives
-#### Set on correct CFLAGS
+### Preparation
+#### Set up correct CFLAGS
 
 On B computer, ```/etc/portage/make.conf``` should not use the automated ```-march=native``` setting in COMMON_FLAGS / CFLAGS / CXXFLAGS fields, but rather an explicit set of flags. To do so you can replace ```-march=native``` with the output of ```resolve-march-native``` (first emerge the *app-misc/resolve-march-native* package if you don't have it).
 
