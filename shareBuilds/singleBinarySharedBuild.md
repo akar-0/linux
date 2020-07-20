@@ -1,7 +1,7 @@
-# Compile binaries for other computers on local network
+# Compile isolated binaries for other computers on local network
 
 ## Introduction
-* It may be interesting to use a powerful computer (A) to build single hefty binaries for a less powerful one (B).
+* It may be interesting to use a powerful computer (A) to build single hefty binaries for a less powerful one (B)
 * This method is however limited and unelegant, since the less powerful machine needs to have all the required dependencies previously installed for the process to come to an end successfully.
 * Both computers are required to have the same architecture. One assumes A's CPU is able to handle all the instructions for B's processor, or the process may fail.
 
