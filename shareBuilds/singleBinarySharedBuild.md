@@ -22,7 +22,14 @@ emerge -a nfs-utils
 
 On B computer, ```/etc/portage/make.conf``` should not use the automated ```-march=native``` setting in COMMON_FLAGS / CFLAGS / CXXFLAGS fields, but rather an explicit set of flags. To do so you can replace ```-march=native``` with the output of ```resolve-march-native``` (first emerge the *app-misc/resolve-march-native* package if you don't have it).
 
-One may also want to ajust some parameters for the building process on A to be more efficient, like MAKEOPTS matching with A's characteristics, on modifying the fstab to mount Portage TMPDIR on tmpfs.
+In the same file, replace or complete CPU_FLAGS_X86 values with the output of ```cpuid2cpuflags``` (emerge *app-portage/cpuid2cpuflags* if you don't have it). One should have something like this:
+
+```bash
+CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"
+```
+Do not use ```-march=native``` in any case or the packages that will be made will be adapted for A and may not work properly or not at all on B.
+
+One may also want to ajust some parameters for the building process on A to be more efficient, like MAKEOPTS matching with A's characteristics, or modifying the fstab to mount Portage TMPDIR on tmpfs (see [Gentoo's wiki page about that](https://wiki.gentoo.org/wiki/Portage_TMPDIR_on_tmpfs)).
 Don't forget to reset those changes when building again on B.
 
 #### Share B's root partition over NFS
