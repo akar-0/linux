@@ -15,7 +15,7 @@ mount --rbind /dev /mnt/$mountPoint/dev
 mount --make-rslave /mnt/$mountPoint/dev
 
 #Chroot
-chroot /mnt/chroot /bin/bash
+chroot /mnt/$mountPoint /bin/bash
 source /etc/profile 
 export PS1="(chroot) ${PS1}"
 echo "chroot is ok"
