@@ -1,4 +1,4 @@
-# Build a whole world binary packaqges fot other computers on local network
+# Build a whole world binary packages fot other computers on local network
 
 ## Introduction
 * How to use a powerful computer (A) to build an all binaries world for a less powerful one (B), Gentoo being properly installed on both.
