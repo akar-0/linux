@@ -66,7 +66,7 @@ mount -t nfs 192.168.x.x:/ /media/B
 Copy the required directories into the future chroot environment:
 
 ```bash
-cp -r /media/B/var/lib/portage/world var/lib/portage
+cp /media/B/var/lib/portage/world var/lib/portage
 cp -r /media/B/etc/portage etc
 ```
 
