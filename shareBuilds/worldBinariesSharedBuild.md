@@ -1,4 +1,4 @@
-# Build a whole world binary packages fot other computers on local network
+# Build a whole @world binary packages for other computers on local network
 
 ## Introduction
 * How to use a powerful computer (A) to build an all binaries world for a less powerful one (B), Gentoo being properly installed on both.
@@ -105,6 +105,12 @@ mount --bind /var/cache/distfiles/ var/cache/distfiles/
 
 The first directory contains the list of gentoo official repository packages, and the second contains the sources already hosted on A.
 
+If you build in ram, run the following command to do it once into the chroot:
+
+```bash
+mount --bind /var/tmp/portage/ var/tmp/portage/
+```
+
 Now mount the necessary partitions and enter the chroot:
 
 ```bash
@@ -141,12 +147,23 @@ If the obtained results are satisfactory, now run  the following command in orde
 emerge -e @world --keep-going --jobs=2
 ```
 
+This will install the world of B and build all the corresponding binaries.
 
 
 ### Installing the binaries
 
+You need to fond a way to share A's /binaries directory with B. One can use nfs or rsync via ssh, but there are other ways.
+
+An easy way is to export B's /binaries partition using NFS, and them mount it in B's /var/cache/binpkgs directory.
+
+To get binaries and give up looking for sources, add the following to you ```/etc/portage/make.conf```:
+
+```bash
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --getbinpkgonly"
+```
 
 
+https://wiki.gentoo.org/wiki/Binary_package_guide
 
 https://forums.gentoo.org/viewtopic.php?p=8482276#8482276
 
