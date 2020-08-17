@@ -149,6 +149,23 @@ emerge -e @world --keep-going --jobs=2
 
 This will install the world of B and build all the corresponding binaries.
 
+###Exit the chroot
+
+```bash
+exit
+umount -l dev{/shm,/pts,}
+umount -R sys
+umount -R proc
+umount -R var/tmp/portage
+umount var/db/repos/gentoo
+umount var/cache/distfiles
+````
+
+Sometimes the following command may be necessary to completely unmount some remaining mount points:
+
+```bash
+umount  /sys/fs/fuse/connections
+```
 
 ### Installing the binaries
 
