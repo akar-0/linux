@@ -47,4 +47,4 @@
 
 
 
-## More: [link](https://tmuxcheatsheet.com/)
+## More: [link](https://tmuxcheatsheet.com/) [github](https://gist.github.com/henrik/1967800)
