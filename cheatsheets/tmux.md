@@ -5,7 +5,11 @@
 
 ```"``` split horizontally
 
+```space``` split v/h
+
 ```x``` close current
+
+```z``` zoom/zoomout
 
 ### switch
 
