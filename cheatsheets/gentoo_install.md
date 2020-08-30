@@ -1,7 +1,7 @@
 ## Tools
 ```os-prober dhcpcd htop portage-utils eix alsa-tools alsa-utils gentoolkit wgetpaste wpa_supplicant```
 
-``emerge -a klavaro ktouch gtypist```
+```emerge -a klavaro ktouch gtypist```
 
 ```ntfs3g dosfstools sys-fs/fatresize```
 
