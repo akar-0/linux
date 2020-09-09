@@ -55,3 +55,4 @@
 * [link](https://tmuxcheatsheet.com/) 
 * [github](https://gist.github.com/henrik/1967800)
 * [Resizing panes in tmux](https://dev.to/michael/resizing-panes-in-tmux-2da7)
+* [crash course](https://thoughtbot.com/blog/a-tmux-crash-course)
