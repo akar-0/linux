@@ -3,6 +3,7 @@
 * get last argument:
 ```sh
 Alt .
+```
 
 ## rsync
 
