@@ -1,3 +1,9 @@
+## general
+
+* get last argument:
+```sh
+Alt .
+
 ## rsync
 
 ```sh
