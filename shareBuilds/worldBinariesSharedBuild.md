@@ -169,7 +169,7 @@ umount  /sys/fs/fuse/connections
 
 ### Installing the binaries
 
-You need to fond a way to share A's /binaries directory with B. One can use nfs or rsync via ssh, but there are other ways.
+You need to find a way to share A's /binaries directory with B. One can use nfs or rsync via ssh, but there are other ways.
 
 An easy way is to export B's /binaries partition using NFS, and them mount it in B's /var/cache/binpkgs directory.
 
