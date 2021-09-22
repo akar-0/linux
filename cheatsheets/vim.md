@@ -6,6 +6,8 @@
 ## edit
 ```ctrl v``` (select lines) ```I # Spacebar Esc```    comment multiple lines
 
+```ctrl v``` (select lines) ```>.```                  indent multiple lines
+
 ## insert
 ```:r!sed -n 3,7p filename``` insert content of lines 2 to 8 of filename
 
