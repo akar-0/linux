@@ -8,6 +8,8 @@
 
 ```ctrl v``` (select lines) ```>.```                  indent multiple lines
 
+```gg=G```          reindent entire buffer 
+
 ## insert
 ```:r!sed -n 3,7p filename``` insert content of lines 2 to 8 of filename
 
