@@ -12,5 +12,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
   128  rsync -av /media/dd/ /media/dd2/
   
   140  rsync -av /media/dd/ /media/dd2/
+
+  rsync -av /etc/ /media/dd/etc/
   
   501  history | grep rsync
