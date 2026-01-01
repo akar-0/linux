@@ -16,3 +16,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
   rsync -av /etc/ /media/dd/etc/
   
   501  history | grep rsync
+
+
+
+$ mogrify -format jpg *.png 
